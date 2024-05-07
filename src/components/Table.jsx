@@ -17,7 +17,7 @@ const Table = () => {
             <col />
             <col />
           </colgroup>
-          <thead className=" text-white bg-neutral-600 dark:bg-gray-300 dark:text-black">
+          <thead className=" text-white  bg-gray-600 dark:bg-gray-300 dark:text-black">
             <tr className="text-left">
               {TableHeaders.map((header) => (
                 <th className="p-3" key={header}>

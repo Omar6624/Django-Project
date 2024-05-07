@@ -40,3 +40,10 @@ export const DemoRowValues = [
     Column10: "sadasdasdfd",
   },
 ];
+
+export const navLinks = [
+  { href: "#home", label: "Home" },
+  { href: "#about-us", label: "Page 1" },
+  { href: "#products", label: "Page 2" },
+  { href: "#contact-us", label: "Page 3" },
+];

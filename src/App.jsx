@@ -1,11 +1,9 @@
-import Table from "./components/Table";
+import DataShowPage from "./sections/DataShowPage";
+
 function App() {
   return (
-    <div className="min-h-screen  bg-white dark:bg-neutral-600">
-      <div className="w-full h-20  bg-slate-400 ">navbar</div>
-      <div>
-        <Table />
-      </div>
+    <div>
+      <DataShowPage />
     </div>
   );
 }
