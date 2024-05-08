@@ -21,9 +21,11 @@ export default {
       },
       colors: {
         primary: "#ECEEFF",
-        "coral-red": "#FF6452",
-        "slate-gray": "#6D6D6D",
-        "pale-blue": "#F5F6FF",
+        "green-primary": "#92FDCD",
+        "green-hover": "#61FAAC",
+        "green-text": "#61FAAC",
+        "gray-text": "#222623",
+        "gray-backgroud": "#99A19C",
         "white-400": "rgba(255, 255, 255, 0.80)",
       },
       boxShadow: {

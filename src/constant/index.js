@@ -47,3 +47,16 @@ export const navLinks = [
   { href: "#products", label: "Page 2" },
   { href: "#contact-us", label: "Page 3" },
 ];
+
+export const navigation = [
+  { name: "NavItem1", href: "#", current: true },
+  { name: "NavItem2", href: "#", current: false },
+  { name: "NavItem3", href: "#", current: false },
+  { name: "NavItem4", href: "#", current: false },
+  { name: "NavItem5", href: "#", current: false },
+  { name: "NavItem6", href: "#", current: false },
+];
+
+export function classNames(...classes) {
+  return classes.filter(Boolean).join(" ");
+}
