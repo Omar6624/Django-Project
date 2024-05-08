@@ -56,3 +56,7 @@ export const navigation = [
   { name: "NavItem5", href: "#", current: false },
   { name: "NavItem6", href: "#", current: false },
 ];
+
+export function classNames(...classes) {
+  return classes.filter(Boolean).join(" ");
+}

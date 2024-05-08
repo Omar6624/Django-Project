@@ -1,11 +1,6 @@
-import { navigation } from "../constant";
-import { useState } from "react";
+import { navigation, classNames } from "../constant";
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
 const VerticalNav = () => {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
   return (
     <div className="flex flex-col w-64">
       <div className="flex-1 flex flex-col min-h-0 border-r border-gray-200 bg-gray-100">

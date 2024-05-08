@@ -1,6 +1,5 @@
-import { navLinks } from "../constant";
+import { navigation, classNames } from "../constant";
 import { Fragment } from "react";
-
 import {
   Menu,
   MenuButton,
@@ -8,15 +7,26 @@ import {
   MenuItems,
   Transition,
 } from "@headlessui/react";
-import { ChevronDownIcon } from "@heroicons/react/16/solid";
 
 const DropdownButton = () => {
   return (
     <>
       <Menu>
-        <MenuButton className="inline-flex items-center gap-2 rounded-md bg-gray-600 py-2 px-4 text-lg font-semibold text-white shadow-inner shadow-white/10 focus:outline-none font-montserrat ">
-          options
-          <ChevronDownIcon className="size-4 fill-white/60" />
+        <MenuButton className="inline-flex items-center gap-2 hover:bg-gray-300 font-montserrat absolute top-2  left-6  rounded-md p-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-10 h-10 hover:text-white focus:outline-none  "
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+            />
+          </svg>
         </MenuButton>
         <Transition
           enter="transition ease-out duration-75"
@@ -28,18 +38,24 @@ const DropdownButton = () => {
         >
           <MenuItems
             anchor="bottom end"
-            className="w-52 origin-top-right rounded-xl  border-white/5 bg-gray-600 p-1 text-sm text-white focus:outline-none font-montserrat my-1"
+            className="w-52 origin-top-right rounded-sm bg- p-2 text-md text-gray-900  bg-gray-300 font-montserrat m-2  "
           >
-            {navLinks.map((item, index) => (
-              <Fragment key={index}>
+            {navigation.map((item) => (
+              <Fragment key={item.name}>
                 <MenuItem>
-                  <button className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-gray-100 data-[focus]:text-slate-600 ">
-                    {item.label}
-                  </button>
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className={classNames(
+                      item.current
+                        ? "bg-gray-200 text-gray-900"
+                        : "text-gray-600 hover:bg-gray-200 hover:text-gray-900",
+                      "group flex items-center px-2 py-2 text-md font-medium rounded-md  "
+                    )}
+                  >
+                    {item.name}
+                  </a>
                 </MenuItem>
-                {index !== navLinks.length - 1 && (
-                  <div className="mx-auto my-1 w-40 h-px bg-white" />
-                )}
               </Fragment>
             ))}
           </MenuItems>
