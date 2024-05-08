@@ -13,7 +13,7 @@ const TableRow = ({
   Column10,
 }) => {
   return (
-    <tr className="border-b border-opacity-20 bg-neutral-300 dark:border-gray-300 dark:bg-gray-50  text-md ">
+    <tr className="border-b border-opacity-20 bg-neutral-300 text-md ">
       <td className="p-3 min-w-2">
         <p>{Index}</p>
       </td>

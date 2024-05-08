@@ -2,23 +2,11 @@ import TableRow from "./TableRow";
 import { TableHeaders, DemoRowValues } from "../constant";
 const Table = () => {
   return (
-    <div className="container p-2 mx-auto sm:p-4 dark:text-gray-800 ">
-      <div className="overflow-auto  rounded-lg h-96 dark:bg-white bg-neutral-100 border-2 shadow-sm ">
+    <div className="container p-2 mx-auto sm:p-4 ">
+      <div className="overflow-auto  rounded-lg h-96 bg-neutral-100 border-2 shadow-sm ">
         <table className="min-w-full text-sm font-montserrat   ">
-          <colgroup>
-            <col />
-            <col />
-            <col />
-            <col />
-            <col />
-            <col />
-            <col />
-            <col />
-            <col />
-            <col />
-          </colgroup>
-          <thead className=" text-white  bg-gray-600 dark:bg-gray-300 dark:text-black">
-            <tr className="text-left">
+          <thead className=" text-white  bg-gray-600 ">
+            <tr className="text-center">
               {TableHeaders.map((header) => (
                 <th className="p-3" key={header}>
                   {header}

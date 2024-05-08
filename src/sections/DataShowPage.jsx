@@ -1,14 +1,11 @@
-import Table from "../components/Table";
-import Nav from "../components/Nav";
+// import Table from "../components/Table";
+import VerticalNav from "../components/VerticalNav";
 const DataShowPage = () => {
   return (
-    <div className="min-h-screen  bg-white dark:bg-neutral-600">
-      <section className="w-full ">
-        <Nav />
-      </section>
-      <section>
-        <Table />
-      </section>
+    <div className="grid lg:grid-cols-7  max-lg:grid-cols-5 h-screen w-full">
+      <div className=" hidden lg:flex lg:flex-shrink-0 h-ful border-r shadow-lg">
+        <VerticalNav />
+      </div>
     </div>
   );
 };
