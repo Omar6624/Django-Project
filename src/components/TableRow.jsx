@@ -13,7 +13,7 @@ const TableRow = ({
   Column10,
 }) => {
   return (
-    <tr className="border-b border-opacity-20 bg-neutral-300 text-md ">
+    <tr className="border-b border-opacity-20  hover:bg-gray-200 bg-gray-100 text-md text-gray-900 hover:text-gray-700   transition-transform ease-in-out delay-50 hover:scale-[1.01]">
       <td className="p-3 min-w-2">
         <p>{Index}</p>
       </td>

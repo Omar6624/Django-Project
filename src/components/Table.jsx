@@ -4,7 +4,7 @@ const Table = () => {
   return (
     <div className="container p-2 mx-auto sm:p-4 ">
       <div className="overflow-auto  rounded-lg h-96 bg-neutral-100 border-2 shadow-sm ">
-        <table className="min-w-full text-sm font-montserrat   ">
+        <table className="min-w-full text-sm font-montserrat">
           <thead className=" text-white  bg-gray-600 ">
             <tr className="text-center">
               {TableHeaders.map((header) => (
