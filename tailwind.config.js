@@ -21,8 +21,8 @@ export default {
       },
       colors: {
         primary: "#ECEEFF",
-        "green-primary": "#92FDCD",
-        "green-hover": "#61FAAC",
+        "green-primary": "#73b947",
+        "green-hover": "#4b961b",
         "green-text": "#61FAAC",
         "gray-text": "#222623",
         "gray-backgroud": "#99A19C",
