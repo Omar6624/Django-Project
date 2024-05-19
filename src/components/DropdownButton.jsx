@@ -12,14 +12,14 @@ const DropdownButton = () => {
   return (
     <>
       <Menu>
-        <MenuButton className="inline-flex items-center gap-2 hover:bg-gray-300 font-montserrat absolute top-2  left-6  rounded-md p-2">
+        <MenuButton className="inline-flex items-center gap-2  hover:border-2 hover:border-gray-500 hover:text-gray-500 font-montserrat absolute top-2  left-6  rounded-md p-1 ">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-10 h-10 hover:text-white focus:outline-none  "
+            className="w-10 h-10  focus:outline-none "
           >
             <path
               strokeLinecap="round"
@@ -38,7 +38,7 @@ const DropdownButton = () => {
         >
           <MenuItems
             anchor="bottom end"
-            className="w-52 origin-top-right rounded-sm bg- p-2 text-md text-gray-900  bg-gray-300 font-montserrat m-2  "
+            className="w-52 origin-top-right rounded-sm bg- p-2 text-md text-gray-900  bg-gray-300 font-montserrat m-2  z-10 "
           >
             {navigation.map((item) => (
               <Fragment key={item.name}>

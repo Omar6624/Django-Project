@@ -1,7 +1,7 @@
 export const TableHeaders = [
   "Index",
-  "Column2",
   "Column1",
+  "Column2",
   "Column3",
   "Column4",
   "Column5",
@@ -10,13 +10,45 @@ export const TableHeaders = [
   "Column8",
   "Column9",
   "Column10",
+  "Column11",
+  "Column12",
+  "Column13",
+  "Column14",
+  "Column15",
+  "Column16",
+  "Column17",
+  "Column18",
+  "Column19",
+  "Column20",
 ];
+
+/* audit_opinion: "Unqualified";
+auditor_name: "Audit Firm A";
+cash_flow_financing: -200000;
+cash_flow_investing: -100000;
+cash_flow_operations: 300000;
+company_name: "ABC Corp";
+country: "USA";
+earnings_per_share: 5.5;
+filing_date: "2023-04-30";
+fiscal_year: 2023;
+gross_profit: 500000;
+id: 1;
+net_income: 200000;
+operating_expense: 300000;
+report_date: "2023-03-31";
+report_id: "RPT001";
+sector: "Technology";
+shareholders_equity: 1000000;
+total_assets: 1500000;
+total_liabilities: 500000;
+total_revenue: 1000000; */
 
 export const DemoRowValues = [
   {
     Index: 1,
-    Column2: "sadasdasdfd",
     Column1: "sadasdasdfd",
+    Column2: "sadasdasdfd",
     Column3: "sadasdasdfd",
     Column4: "sadasdasdfd",
     Column5: "sadasdasdfd",
@@ -25,11 +57,16 @@ export const DemoRowValues = [
     Column8: "sadasdasdfd",
     Column9: "sadasdasdfd",
     Column10: "sadasdasdfd",
+    Column11: "sadasdasdfd",
+    Column12: "sadasdasdfd",
+    Column13: "sadasdasdfd",
+    Column14: "sadasdasdfd",
+    Column15: "sadasdasdfd",
   },
   {
     Index: 2,
-    Column2: "sadasdasdfd",
     Column1: "sadasdasdfd",
+    Column2: "sadasdasdfd",
     Column3: "sadasdasdfd",
     Column4: "sadasdasdfd",
     Column5: "sadasdasdfd",
@@ -38,6 +75,137 @@ export const DemoRowValues = [
     Column8: "sadasdasdfd",
     Column9: "sadasdasdfd",
     Column10: "sadasdasdfd",
+    Column11: "sadasdasdfd",
+    Column12: "sadasdasdfd",
+    Column13: "sadasdasdfd",
+    Column14: "sadasdasdfd",
+    Column15: "sadasdasdfd",
+  },
+  {
+    Index: 3,
+    Column1: "sadasdasdfd",
+    Column2: "sadasdasdfd",
+    Column3: "sadasdasdfd",
+    Column4: "sadasdasdfd",
+    Column5: "sadasdasdfd",
+    Column6: "sadasdasdfd",
+    Column7: "sadasdasdfd",
+    Column8: "sadasdasdfd",
+    Column9: "sadasdasdfd",
+    Column10: "sadasdasdfd",
+    Column11: "sadasdasdfd",
+    Column12: "sadasdasdfd",
+    Column13: "sadasdasdfd",
+    Column14: "sadasdasdfd",
+    Column15: "sadasdasdfd",
+  },
+  {
+    Index: 4,
+    Column1: "sadasdasdfd",
+    Column2: "sadasdasdfd",
+    Column3: "sadasdasdfd",
+    Column4: "sadasdasdfd",
+    Column5: "sadasdasdfd",
+    Column6: "sadasdasdfd",
+    Column7: "sadasdasdfd",
+    Column8: "sadasdasdfd",
+    Column9: "sadasdasdfd",
+    Column10: "sadasdasdfd",
+    Column11: "sadasdasdfd",
+    Column12: "sadasdasdfd",
+    Column13: "sadasdasdfd",
+    Column14: "sadasdasdfd",
+    Column15: "sadasdasdfd",
+  },
+  {
+    Index: 5,
+    Column1: "sadasdasdfd",
+    Column2: "sadasdasdfd",
+    Column3: "sadasdasdfd",
+    Column4: "sadasdasdfd",
+    Column5: "sadasdasdfd",
+    Column6: "sadasdasdfd",
+    Column7: "sadasdasdfd",
+    Column8: "sadasdasdfd",
+    Column9: "sadasdasdfd",
+    Column10: "sadasdasdfd",
+    Column11: "sadasdasdfd",
+    Column12: "sadasdasdfd",
+    Column13: "sadasdasdfd",
+    Column14: "sadasdasdfd",
+    Column15: "sadasdasdfd",
+  },
+  {
+    Index: 6,
+    Column1: "sadasdasdfd",
+    Column2: "sadasdasdfd",
+    Column3: "sadasdasdfd",
+    Column4: "sadasdasdfd",
+    Column5: "sadasdasdfd",
+    Column6: "sadasdasdfd",
+    Column7: "sadasdasdfd",
+    Column8: "sadasdasdfd",
+    Column9: "sadasdasdfd",
+    Column10: "sadasdasdfd",
+    Column11: "sadasdasdfd",
+    Column12: "sadasdasdfd",
+    Column13: "sadasdasdfd",
+    Column14: "sadasdasdfd",
+    Column15: "sadasdasdfd",
+  },
+  {
+    Index: 7,
+    Column1: "sadasdasdfd",
+    Column2: "sadasdasdfd",
+    Column3: "sadasdasdfd",
+    Column4: "sadasdasdfd",
+    Column5: "sadasdasdfd",
+    Column6: "sadasdasdfd",
+    Column7: "sadasdasdfd",
+    Column8: "sadasdasdfd",
+    Column9: "sadasdasdfd",
+    Column10: "sadasdasdfd",
+    Column11: "sadasdasdfd",
+    Column12: "sadasdasdfd",
+    Column13: "sadasdasdfd",
+    Column14: "sadasdasdfd",
+    Column15: "sadasdasdfd",
+  },
+  {
+    Index: 8,
+    Column1: "sadasdasdfd",
+    Column2: "sadasdasdfd",
+    Column3: "sadasdasdfd",
+    Column4: "sadasdasdfd",
+    Column5: "sadasdasdfd",
+    Column6: "sadasdasdfd",
+    Column7: "sadasdasdfd",
+    Column8: "sadasdasdfd",
+    Column9: "sadasdasdfd",
+    Column10: "sadasdasdfd",
+    Column11: "sadasdasdfd",
+    Column12: "sadasdasdfd",
+    Column13: "sadasdasdfd",
+    Column14: "sadasdasdfd",
+    Column15: "sadasdasdfd",
+  },
+  {
+    Index: 7,
+    Column1: "sadasdasdfd",
+    Column2: "sadasdasdfd",
+    Column3: "sadasdasdfd",
+    Column4: "sadasdasdfd",
+    Column5: "sadasdasdfd",
+    Column6: "sadasdasdfd",
+    Column7: "sadasdasdfd",
+    Column8: "sadasdasdfd",
+    Column9: "sadasdasdfd",
+    Column10: "sadasdasdfd",
+    Column11: "sadasdasdfd",
+    Column12: "sadasdasdfd",
+    Column13: "sadasdasdfd",
+    Column14: "sadasdasdfd",
+    Column15: "sadasdasdfd",
   },
 ];
 
@@ -49,12 +217,42 @@ export const navLinks = [
 ];
 
 export const navigation = [
-  { name: "NavItem1", href: "#", current: true },
-  { name: "NavItem2", href: "#", current: false },
-  { name: "NavItem3", href: "#", current: false },
-  { name: "NavItem4", href: "#", current: false },
-  { name: "NavItem5", href: "#", current: false },
-  { name: "NavItem6", href: "#", current: false },
+  {
+    name: "Filter",
+    href: "#",
+    current: true,
+    icon: "/public/icons/Funnel.svg",
+  },
+  {
+    name: "Dashboard",
+    href: "#",
+    current: false,
+    icon: "/public/icons/ArrowDownCircle.svg",
+  },
+  {
+    name: "Data Upload",
+    href: "#",
+    current: false,
+    icon: "/public/icons/CloudArrowUp.svg",
+  },
+  {
+    name: "Entity Tracking",
+    href: "#",
+    current: false,
+    icon: "/public/icons/PaperClip.svg",
+  },
+  {
+    name: "Report Generation",
+    href: "#",
+    current: false,
+    icon: "/public/icons/ClipboardDocumentList.svg",
+  },
+  {
+    name: "About",
+    href: "#",
+    current: false,
+    icon: "/public/icons/AtSymbol.svg",
+  },
 ];
 
 export function classNames(...classes) {
