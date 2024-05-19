@@ -4,8 +4,8 @@ import DropdownButton from "./DropdownButton";
 const Nav = () => {
   return (
     <header>
-      <nav className="flex flex-1 justify-end p-3 shadow-md dark:text-white ">
-        <ul className="flex gap-10 flex-nowrap justify-center items-center max-lg:hidden font-montserrat text-gray-600">
+      <nav className="flex flex-1 justify-end p-3 shadow-md dark:text-white z-10">
+        <ul className="flex gap-10 flex-nowrap justify-center items-center max-lg:hidden font-montserrat text-gray-600 ">
           {navLinks.map((item) => (
             <li
               key={item.label}

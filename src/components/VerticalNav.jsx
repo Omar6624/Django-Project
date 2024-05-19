@@ -4,11 +4,11 @@ const VerticalNav = () => {
   return (
     <div className="flex flex-col sticky top-0">
       <div className="flex-1 flex flex-col  min-h-0 border-r border-gray-200 bg-gray-100">
-        <div className="flex-1 flex flex-col pt-5 pb-4">
+        <div className="flex-1 flex flex-col pt-5 pb-4 ">
           <div className="flex items-center flex-shrink-0 px-4">
             <img className="h-30 w-auto" src="/Frc.png" alt="Workflow" />
           </div>
-          <nav className="mt-10 flex-1" aria-label="Sidebar">
+          <nav className="mt-10 flex-1 " aria-label="Sidebar">
             <div className="px-2 space-y-3 m-2">
               {navigation.map((item) => (
                 <a

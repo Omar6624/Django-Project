@@ -1,32 +1,39 @@
 import TableRow from "./TableRow";
-import { useState, Fragment } from "react";
-import { TableHeaders, DemoRowValues } from "../constant";
+import { useState, Fragment, useEffect } from "react";
+import { TableHeaders } from "../constant";
 import PdfShow from "./PdfShow";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
+import axios from "axios";
+
+const generatePdf = (id, pdfName) => {
+  const el = document.getElementById(id);
+  if (!el) {
+    console.error("id not found");
+    return;
+  }
+  const doc = new jsPDF();
+  // const width = el.offsetWidth;
+  const height = el.offsetHeight;
+  html2canvas(el).then((canvas) => {
+    // Convert the canvas to a data URL
+    const imageData = canvas.toDataURL("image/png");
+
+    // Add an image to the PDF document, keeping the width as A4 width (210mm)
+    doc.addImage(imageData, "PNG", 0, 0, 210, (height * 210) / canvas.width);
+
+    // Save the PDF
+    doc.save(pdfName);
+  });
+};
 
 const Table = () => {
-  const generatePdf = (id, pdfName) => {
-    const el = document.getElementById(id);
-    if (!el) {
-      console.error("id not found");
-      return;
-    }
-    const doc = new jsPDF();
-    // const width = el.offsetWidth;
-    const height = el.offsetHeight;
-    html2canvas(el).then((canvas) => {
-      // Convert the canvas to a data URL
-      const imageData = canvas.toDataURL("image/png");
-
-      // Add an image to the PDF document, keeping the width as A4 width (210mm)
-      doc.addImage(imageData, "PNG", 0, 0, 210, (height * 210) / canvas.width);
-
-      // Save the PDF
-      doc.save(pdfName);
-    });
-  };
   const [rowData, setRowData] = useState(null);
+  const [myData, setMyData] = useState([]);
+  useEffect(() => {
+    axios.get("http://127.0.0.1:8000/data/").then((res) => setMyData(res.data));
+  }, []);
+
   const rowClickHandle = (rows) => {
     console.log(typeof rows);
     setRowData(rows);
@@ -46,9 +53,9 @@ const Table = () => {
               </tr>
             </thead>
             <tbody>
-              {DemoRowValues.map((items, index) => (
+              {myData.map((items) => (
                 <TableRow
-                  key={index}
+                  key={items.id}
                   items={items}
                   onClick={() => rowClickHandle(items)}
                 />
@@ -59,7 +66,7 @@ const Table = () => {
       </div>
       <div className="flex justify-end container p-4 mx-auto  ">
         <button
-          className="bg-green-primary p-2 text-gray-100 font-palanquin font-semibold rounded-sm flex  hover:bg-green-hover  transition-transform ease-in-out delay-50  hover:scale-105 "
+          className="bg-green-primary p-2 text-gray-100 font-palanquin font-semibold rounded-sm flex  hover:bg-green-hover  transition-transform ease-in-out delay-50  hover:scale-105 hover:animate-pulse"
           onClick={() => generatePdf("pdf-id", "Report")}
         >
           Download PDF
@@ -69,7 +76,7 @@ const Table = () => {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-6 h-6 p-1 font-semibold"
+            className="w-6 h-6 p-1 font-semibold "
           >
             <path
               strokeLinecap="round"

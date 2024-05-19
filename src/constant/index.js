@@ -15,7 +15,34 @@ export const TableHeaders = [
   "Column13",
   "Column14",
   "Column15",
+  "Column16",
+  "Column17",
+  "Column18",
+  "Column19",
+  "Column20",
 ];
+
+/* audit_opinion: "Unqualified";
+auditor_name: "Audit Firm A";
+cash_flow_financing: -200000;
+cash_flow_investing: -100000;
+cash_flow_operations: 300000;
+company_name: "ABC Corp";
+country: "USA";
+earnings_per_share: 5.5;
+filing_date: "2023-04-30";
+fiscal_year: 2023;
+gross_profit: 500000;
+id: 1;
+net_income: 200000;
+operating_expense: 300000;
+report_date: "2023-03-31";
+report_id: "RPT001";
+sector: "Technology";
+shareholders_equity: 1000000;
+total_assets: 1500000;
+total_liabilities: 500000;
+total_revenue: 1000000; */
 
 export const DemoRowValues = [
   {

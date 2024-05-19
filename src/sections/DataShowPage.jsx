@@ -1,6 +1,7 @@
 import Table from "../components/Table";
 import VerticalNav from "../components/VerticalNav";
 import DropdownButton from "../components/DropdownButton";
+import { SearchComponents } from "../components/SearchComponents";
 
 const DataShowPage = () => {
   return (
@@ -12,7 +13,8 @@ const DataShowPage = () => {
         <DropdownButton />
       </div>
 
-      <div className="lg:col-span-6 w-full  p-3 ">
+      <div className="lg:col-span-6 w-full  p-3 pt-10">
+        <SearchComponents />
         <Table />
       </div>
     </div>

@@ -9,52 +9,64 @@ const TableRow = ({ items, onClick }) => {
       onClick={() => onClick(items)}
     >
       <td className="p-3 min-w-2">
-        <p>{items.Index}</p>
+        <p>{items.id}</p>
       </td>
-      <td className="p-3  min-w-7">
-        <p>{items.Column1}</p>
+      <td className="p-3 whitespace-nowrap min-w-7">
+        <p>{items.report_id}</p>
       </td>
-      <td className="p-3  min-w-7">
-        <p>{items.Column2}</p>
+      <td className="p-3 whitespace-nowrap min-w-7">
+        <p>{items.company_name}</p>
       </td>
-      <td className="p-3  min-w-7">
-        <p>{items.Column3}</p>
+      <td className="p-3 whitespace-nowrap min-w-7">
+        <p>{items.fiscal_year}</p>
       </td>
-      <td className="p-3  min-w-7">
-        <p>{items.Column4}</p>
+      <td className="p-3 whitespace-nowrap min-w-7">
+        <p>{items.total_revenue}</p>
       </td>
-      <td className="p-3  min-w-7">
-        <p>{items.Column5}</p>
+      <td className="p-3 whitespace-nowrap min-w-7">
+        <p>{items.gross_profit}</p>
       </td>
-      <td className="p-3  min-w-7">
-        <p>{items.Column6}</p>
+      <td className="p-3whitespace-nowrap  min-w-7">
+        <p>{items.operating_expense}</p>
       </td>
-      <td className="p-3  min-w-7">
-        <p>{items.Column7}</p>
+      <td className="p-3 whitespace-nowrap min-w-7">
+        <p>{items.net_income}</p>
       </td>
-      <td className="p-3  min-w-7">
-        <p>{items.Column8}</p>
+      <td className="p-3 whitespace-nowrap min-w-7">
+        <p>{items.earnings_per_share}</p>
       </td>
-      <td className="p-3  min-w-7">
-        <p>{items.Column9}</p>
+      <td className="p-3 whitespace-nowrap min-w-7">
+        <p>{items.total_assets}</p>
       </td>
-      <td className="p-3  min-w-7">
-        <p>{items.Column10}</p>
+      <td className="p-3 whitespace-nowrap min-w-7">
+        <p>{items.total_liabilities}</p>
       </td>
-      <td className="p-3  min-w-7">
-        <p>{items.Column11}</p>
+      <td className="p-3 whitespace-nowrap min-w-7">
+        <p>{items.shareholders_equity}</p>
       </td>
-      <td className="p-3  min-w-7">
-        <p>{items.Column12}</p>
+      <td className="p-3 whitespace-nowrap min-w-7">
+        <p>{items.cash_flow_operations}</p>
       </td>
-      <td className="p-3  min-w-7">
-        <p>{items.Column13}</p>
+      <td className="p-3whitespace-nowrap  min-w-7">
+        <p>{items.cash_flow_investing}</p>
       </td>
-      <td className="p-3  min-w-7">
-        <p>{items.Column14}</p>
+      <td className="p-3 whitespace-nowrap min-w-7">
+        <p>{items.cash_flow_financing}</p>
       </td>
-      <td className="p-3  min-w-7">
-        <p>{items.Column15}</p>
+      <td className="p-3 whitespace-nowrap min-w-7">
+        <p>{items.auditor_name}</p>
+      </td>
+      <td className="p-3 whitespace-nowrap min-w-7">
+        <p>{items.audit_opinion}</p>
+      </td>
+      <td className="p-3 whitespace-nowrap min-w-7">
+        <p>{items.report_date}</p>
+      </td>
+      <td className="p-3 whitespace-nowrap min-w-7">
+        <p>{items.filing_date}</p>
+      </td>
+      <td className="p-3 whitespace-nowrap min-w-7">
+        <p>{items.country}</p>
       </td>
     </tr>
   );
@@ -62,8 +74,8 @@ const TableRow = ({ items, onClick }) => {
 
 TableRow.propTypes = {
   items: PropTypes.shape({
-    Index: PropTypes.number.isRequired,
-    Column1: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+    auditor_name: PropTypes.string.isRequired,
     Column2: PropTypes.string.isRequired,
     Column3: PropTypes.string.isRequired,
     Column4: PropTypes.string.isRequired,
@@ -78,6 +90,11 @@ TableRow.propTypes = {
     Column13: PropTypes.string.isRequired,
     Column14: PropTypes.string.isRequired,
     Column15: PropTypes.string.isRequired,
+    Column16: PropTypes.string.isRequired,
+    Column17: PropTypes.string.isRequired,
+    Column18: PropTypes.string.isRequired,
+    Column19: PropTypes.string.isRequired,
+    Column20: PropTypes.string.isRequired,
   }),
   onClick: PropTypes.func.isRequired,
 };
