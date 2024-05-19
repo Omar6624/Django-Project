@@ -11,3 +11,6 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
+.custom-btn {
+  @apply bg-green-primary  text-gray-100 font-palanquin font-semibold rounded-sm flex  hover:bg-green-hover  transition-transform ease-in-out   hover:scale-105 hover:animate-pulse;
+}

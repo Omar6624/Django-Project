@@ -5,7 +5,7 @@ import PdfShow from "./PdfShow";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 import axios from "axios";
-
+import propTypes from "prop-types";
 const generatePdf = (id, pdfName) => {
   const el = document.getElementById(id);
   if (!el) {
@@ -27,7 +27,7 @@ const generatePdf = (id, pdfName) => {
   });
 };
 
-const Table = () => {
+const Table = ({ dateValue, searchValue }) => {
   const [rowData, setRowData] = useState(null);
   const [myData, setMyData] = useState([]);
   useEffect(() => {
@@ -35,7 +35,6 @@ const Table = () => {
   }, []);
 
   const rowClickHandle = (rows) => {
-    console.log(typeof rows);
     setRowData(rows);
   };
   return (
@@ -53,20 +52,41 @@ const Table = () => {
               </tr>
             </thead>
             <tbody>
-              {myData.map((items) => (
-                <TableRow
-                  key={items.id}
-                  items={items}
-                  onClick={() => rowClickHandle(items)}
-                />
-              ))}
+              {myData
+                .filter((item) => {
+                  if (!searchValue) return true; // If there's no search value, keep the item
+                  const Match =
+                    item.sector
+                      .toLowerCase()
+                      .includes(searchValue.toLowerCase()) ||
+                    item.country
+                      .toLowerCase()
+                      .includes(searchValue.toLowerCase());
+                  if (dateValue === null) {
+                    return Match;
+                  } else {
+                    return (
+                      Match &&
+                      item.report_date
+                        .toLowerCase()
+                        .includes(dateValue.toLowerCase())
+                    );
+                  }
+                })
+                .map((items) => (
+                  <TableRow
+                    key={items.id}
+                    items={items}
+                    onClick={() => rowClickHandle(items)}
+                  />
+                ))}
             </tbody>
           </table>
         </div>
       </div>
       <div className="flex justify-end container p-4 mx-auto  ">
         <button
-          className="bg-green-primary p-2 text-gray-100 font-palanquin font-semibold rounded-sm flex  hover:bg-green-hover  transition-transform ease-in-out delay-50  hover:scale-105 hover:animate-pulse"
+          className="custom-btn delay-50 p-2"
           onClick={() => generatePdf("pdf-id", "Report")}
         >
           Download PDF
@@ -94,3 +114,7 @@ const Table = () => {
 };
 
 export default Table;
+Table.propTypes = {
+  dateValue: propTypes.string.isRequired,
+  searchValue: propTypes.string.isRequired,
+};

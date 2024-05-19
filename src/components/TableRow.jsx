@@ -66,6 +66,9 @@ const TableRow = ({ items, onClick }) => {
         <p>{items.filing_date}</p>
       </td>
       <td className="p-3 whitespace-nowrap min-w-7">
+        <p>{items.sector}</p>
+      </td>
+      <td className="p-3 whitespace-nowrap min-w-7">
         <p>{items.country}</p>
       </td>
     </tr>
