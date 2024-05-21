@@ -3,73 +3,83 @@ const TableRow = ({ items, onClick }) => {
   if (!items) {
     return null;
   }
+  // console.log(typeof items)
   return (
     <tr
       className="border-b border-opacity-20  hover:bg-gray-200 bg-gray-100 text-md text-gray-900 hover:text-gray-700   transition-transform ease-in-out delay-50 hover:scale-[1.01] hover:cursor-pointer"
       onClick={() => onClick(items)}
     >
+      {/* {Object.keys(items).map((item) => (
+        <td
+          key={items[item]}
+          className="p-3 whitespace-nowrap min-w-7 max-w-64"
+        >
+          <p>{items[item]}</p>
+        </td>
+      ))} */}
+
       <td className="p-3 min-w-2">
-        <p>{items.id}</p>
+        <p>{items.Index}</p>
       </td>
-      <td className="p-3 whitespace-nowrap min-w-7">
-        <p>{items.report_id}</p>
+      <td className="p-3 whitespace-nowrap min-w-7 max-w-16">
+        <p>{items.DVC_Code}</p>
       </td>
-      <td className="p-3 whitespace-nowrap min-w-7">
-        <p>{items.company_name}</p>
+      <td className="p-3 whitespace-nowrap min-w-7  max-w-60">
+        <p>{items.Company_Name}</p>
       </td>
-      <td className="p-3 whitespace-nowrap min-w-7">
-        <p>{items.fiscal_year}</p>
+      <td className="p-3 whitespace-nowrap min-w-7  max-w-60">
+        <p>{items.Business_Nature}</p>
       </td>
-      <td className="p-3 whitespace-nowrap min-w-7">
-        <p>{items.total_revenue}</p>
+      <td className="p-3 whitespace-nowrap min-w-7 max-w-60">
+        <p>{items.Business_Sector}</p>
       </td>
-      <td className="p-3 whitespace-nowrap min-w-7">
-        <p>{items.gross_profit}</p>
+      <td className="p-3 whitespace-nowrap min-w-7 max-w-60">
+        <p>{items.Business_Industry}</p>
       </td>
-      <td className="p-3whitespace-nowrap  min-w-7">
-        <p>{items.operating_expense}</p>
+      <td className="p-3whitespace-nowrap  min-w-7 max-w-60">
+        <p>{items.Listed}</p>
       </td>
-      <td className="p-3 whitespace-nowrap min-w-7">
-        <p>{items.net_income}</p>
+      <td className="p-3 whitespace-nowrap min-w-7 max-w-60">
+        <p>{items.Legal_Status}</p>
       </td>
-      <td className="p-3 whitespace-nowrap min-w-7">
-        <p>{items.earnings_per_share}</p>
+      <td className="p-3 whitespace-nowrap min-w-7 max-w-60">
+        <p>{items.User_Key}</p>
       </td>
-      <td className="p-3 whitespace-nowrap min-w-7">
-        <p>{items.total_assets}</p>
+      <td className="p-3 whitespace-nowrap min-w-7 max-w-60">
+        <p>{items.User_Name}</p>
       </td>
-      <td className="p-3 whitespace-nowrap min-w-7">
-        <p>{items.total_liabilities}</p>
+      <td className="p-3 whitespace-nowrap min-w-7 max-w-60">
+        <p>{items.Firm_Key}</p>
       </td>
-      <td className="p-3 whitespace-nowrap min-w-7">
-        <p>{items.shareholders_equity}</p>
+      <td className="p-3 whitespace-nowrap min-w-7 max-w-60">
+        <p>{items.Firm_Name}</p>
       </td>
-      <td className="p-3 whitespace-nowrap min-w-7">
-        <p>{items.cash_flow_operations}</p>
+      <td className="p-3 whitespace-nowrap min-w-7 max-w-60">
+        <p>{items.Service_Category}</p>
       </td>
-      <td className="p-3whitespace-nowrap  min-w-7">
-        <p>{items.cash_flow_investing}</p>
+      <td className="p-3whitespace-nowrap  min-w-7 max-w-60">
+        <p>{items.Service_Name}</p>
       </td>
-      <td className="p-3 whitespace-nowrap min-w-7">
-        <p>{items.cash_flow_financing}</p>
+      <td className="p-3 whitespace-nowrap min-w-7 max-w-60">
+        <p>{items.Document_Date}</p>
       </td>
-      <td className="p-3 whitespace-nowrap min-w-7">
-        <p>{items.auditor_name}</p>
+      <td className="p-3 whitespace-nowrap min-w-7 max-w-60">
+        <p>{items.Document}</p>
       </td>
-      <td className="p-3 whitespace-nowrap min-w-7">
-        <p>{items.audit_opinion}</p>
+      <td className="p-3 whitespace-nowrap min-w-7 max-w-60">
+        <p>{items.Reference_Law}</p>
       </td>
-      <td className="p-3 whitespace-nowrap min-w-7">
-        <p>{items.report_date}</p>
+      <td className="p-3 whitespace-nowrap min-w-7 max-w-60">
+        <p>{items.DVC_Date}</p>
       </td>
-      <td className="p-3 whitespace-nowrap min-w-7">
-        <p>{items.filing_date}</p>
+      <td className="p-3 whitespace-nowrap min-w-7 max-w-60">
+        <p>{items.Day}</p>
       </td>
-      <td className="p-3 whitespace-nowrap min-w-7">
-        <p>{items.sector}</p>
+      <td className="p-3 whitespace-nowrap min-w-7 max-w-60">
+        <p>{items.Month}</p>
       </td>
-      <td className="p-3 whitespace-nowrap min-w-7">
-        <p>{items.country}</p>
+      <td className="p-3 whitespace-nowrap min-w-7 max-w-60">
+        <p>{items.Year}</p>
       </td>
     </tr>
   );
@@ -77,27 +87,27 @@ const TableRow = ({ items, onClick }) => {
 
 TableRow.propTypes = {
   items: PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    auditor_name: PropTypes.string.isRequired,
-    Column2: PropTypes.string.isRequired,
-    Column3: PropTypes.string.isRequired,
-    Column4: PropTypes.string.isRequired,
-    Column5: PropTypes.string.isRequired,
-    Column6: PropTypes.string.isRequired,
-    Column7: PropTypes.string.isRequired,
-    Column8: PropTypes.string.isRequired,
-    Column9: PropTypes.string.isRequired,
-    Column10: PropTypes.string.isRequired,
-    Column11: PropTypes.string.isRequired,
-    Column12: PropTypes.string.isRequired,
-    Column13: PropTypes.string.isRequired,
-    Column14: PropTypes.string.isRequired,
-    Column15: PropTypes.string.isRequired,
-    Column16: PropTypes.string.isRequired,
-    Column17: PropTypes.string.isRequired,
-    Column18: PropTypes.string.isRequired,
-    Column19: PropTypes.string.isRequired,
-    Column20: PropTypes.string.isRequired,
+    Index: PropTypes.number.isRequired,
+    DVC_Code: PropTypes.string.isRequired,
+    Company_Name: PropTypes.string.isRequired,
+    Business_Nature: PropTypes.string.isRequired,
+    Business_Sector: PropTypes.string.isRequired,
+    Business_Industry: PropTypes.string.isRequired,
+    Listed: PropTypes.string.isRequired,
+    Legal_Status: PropTypes.string.isRequired,
+    User_Key: PropTypes.string.isRequired,
+    User_Name: PropTypes.string.isRequired,
+    Firm_Key: PropTypes.string.isRequired,
+    Firm_Name: PropTypes.string.isRequired,
+    Service_Category: PropTypes.string.isRequired,
+    Service_Name: PropTypes.string.isRequired,
+    Document_Date: PropTypes.string.isRequired,
+    Document: PropTypes.string.isRequired,
+    Reference_Law: PropTypes.string.isRequired,
+    Day: PropTypes.number.isRequired,
+    Month: PropTypes.number.isRequired,
+    Year: PropTypes.number.isRequired,
+    DVC_Date: PropTypes.string.isRequired,
   }),
   onClick: PropTypes.func.isRequired,
 };
