@@ -31,7 +31,9 @@ const Table = ({ dateValue, searchValue, selectValue }) => {
   const [rowData, setRowData] = useState(null);
   const [myData, setMyData] = useState([]);
   useEffect(() => {
-    axios.get("http://127.0.0.1:8000/data/").then((res) => setMyData(res.data));
+    axios
+      .get("http://127.0.0.1:8000/api/data/")
+      .then((res) => setMyData(res.data));
   }, []);
 
   // console.log(dateValue.date());
