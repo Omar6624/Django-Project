@@ -27,13 +27,16 @@ const generatePdf = (id, pdfName) => {
   });
 };
 
-const Table = ({ dateValue, searchValue }) => {
+const Table = ({ dateValue, searchValue, selectValue }) => {
   const [rowData, setRowData] = useState(null);
   const [myData, setMyData] = useState([]);
   useEffect(() => {
-    axios.get("http://127.0.0.1:8000/data/").then((res) => setMyData(res.data));
+    axios
+      .get("http://127.0.0.1:8000/api/data/")
+      .then((res) => setMyData(res.data));
   }, []);
 
+  // console.log(dateValue.date());
   const rowClickHandle = (rows) => {
     setRowData(rows);
   };
@@ -43,7 +46,7 @@ const Table = ({ dateValue, searchValue }) => {
         <div className=" overflow-scroll  rounded-sm h-96 bg-neutral-100 border-2 shadow-sm max-w-full">
           <table className="min-w-full text-sm font-montserrat ">
             <thead>
-              <tr className="text-center sticky top-0 text-white  bg-gray-600 z-10">
+              <tr className="text-center sticky top-0 text-white  bg-gray-600 z-10 p-3 whitespace-nowrap min-w-7 max-w-60">
                 {TableHeaders.map((header) => (
                   <th className="p-3" key={header}>
                     {header}
@@ -54,28 +57,62 @@ const Table = ({ dateValue, searchValue }) => {
             <tbody>
               {myData
                 .filter((item) => {
-                  if (!searchValue) return true; // If there's no search value, keep the item
-                  const Match =
-                    item.sector
-                      .toLowerCase()
-                      .includes(searchValue.toLowerCase()) ||
-                    item.country
-                      .toLowerCase()
-                      .includes(searchValue.toLowerCase());
-                  if (dateValue === null) {
+                  let Match = item;
+                  if (!searchValue && !dateValue) return item;
+                  else {
+                    if (selectValue === "Company_Name") {
+                      Match = item.Company_Name.toLowerCase().includes(
+                        searchValue.toLowerCase()
+                      );
+                    } else if (selectValue === "User_Name") {
+                      Match = item.User_Name.toLowerCase().includes(
+                        searchValue.toLowerCase()
+                      );
+                    } else if (selectValue === "Business_Industry") {
+                      Match = item.Business_Industry.toLowerCase().includes(
+                        searchValue.toLowerCase()
+                      );
+                    } else if (selectValue === "Business_Nature") {
+                      Match = item.Business_Nature.toLowerCase().includes(
+                        searchValue.toLowerCase()
+                      );
+                    } else if (selectValue === "Date") {
+                      const year = dateValue ? dateValue.year() : null;
+                      const month = dateValue ? dateValue.month() + 1 : null; // Adding 1 to get the correct month (1-based index)
+                      const day = dateValue ? dateValue.date() : null;
+                      Match =
+                        item.Day === day &&
+                        item.Month === month &&
+                        item.Year === year;
+                    }
                     return Match;
-                  } else {
-                    return (
-                      Match &&
-                      item.report_date
-                        .toLowerCase()
-                        .includes(dateValue.toLowerCase())
-                    );
                   }
+
+                  // let Match = null;
+                  // if (!searchValue) Match = item;
+                  // else {
+                  //   Match =
+                  //     item.sector
+                  //       .toLowerCase()
+                  //       .includes(searchValue.toLowerCase()) ||
+                  //     item.country
+                  //       .toLowerCase()
+                  //       .includes(searchValue.toLowerCase());
+                  // }
+                  // if (dateValue === null) {
+                  //   return Match;
+                  // } else {
+                  //   return (
+                  //     Match &&
+                  //     item.report_date
+                  //       .toLowerCase()
+                  //       .includes(dateValue.toLowerCase())
+                  //   );
+                  // }
                 })
                 .map((items) => (
                   <TableRow
-                    key={items.id}
+                    key={items.Index}
                     items={items}
                     onClick={() => rowClickHandle(items)}
                   />
@@ -115,6 +152,7 @@ const Table = ({ dateValue, searchValue }) => {
 
 export default Table;
 Table.propTypes = {
-  dateValue: propTypes.string.isRequired,
+  dateValue: propTypes.object,
+  selectValue: propTypes.string.isRequired,
   searchValue: propTypes.string.isRequired,
 };
