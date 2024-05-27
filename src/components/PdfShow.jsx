@@ -17,7 +17,7 @@ const PdfShow = ({ rowData }) => {
   return (
     <div className="m-3 bg-slate-100  border-2 border-gray-400 rounded-sm ">
       <div className="flex max-lg:flex-col items-center justify-self-center">
-        <img src="/public/Frc.png" alt="frc" />
+        <img src={Frc} alt="frc" />
         <div className=" text-[60px]  font-palanquin text-gray-600 pb-6 font-bold lg:ml-72 ">
           <p>DVST Report</p>
         </div>
